@@ -56,7 +56,8 @@ messaging.peerSocket.onopen = function() {
   fetchWeather()
 }
 
-document.getElementById("change_provider").onclick = function(e) {
-  provider = (++provider) % PROVIDERS.length
+function refresh_weather() {
   fetchWeather()
+  console.log("Refreshing Weather")
 }
+setInterval(refresh_weather, 30 * 60 * 1000) //Refresh the weather every 30 minutes
